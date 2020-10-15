@@ -35,13 +35,20 @@ def validpass(password):
         else:
             return True
 
-print("Digite Usuario")
-username = input()
-print("Digite contraseña:")
-password = input()
+userOk=False
+passOk=False
+while not(userOk):
+    print("Digite Usuario")
+    username = input()
+    if validname(username):
+        print ("Nombre válido")
+        userOk=True
 
-if validname(username):
-    print ("Nombre válido")
+while not(passOk):
+    print("Digite contraseña:")
+    password = input()
+    if validpass(password):
+        print ("Contraseña válida")
+        passOk=True
 
-if validpass(password):
-    print ("Contraseña válida")
+print("Datos validos: ",username,password)
